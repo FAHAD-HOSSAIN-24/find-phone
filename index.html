@@ -13,24 +13,73 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
         }
+        @media screen and (max-width: 600px) {
+            #show-phone-div{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+        }
+        #search-field{
+            border: 1px solid #14e1d9;
+        }
+        #search-btn{
+            background-color: #14e1d9;
+            color: black;
+        }
+    #show-more-btn{
+        background-color: #14e1d9;
+        border-radius: 10px;
+        color: white;
+        padding: 5px 15px;
+        text-align: center;
+        margin: auto;
+        font-weight: 700;
+    }
+    #spinner{
+        text-align: center;
+    }
+    
     </style>
 </head>
 <body>
+    <!-- spinnar -->
+    <div id="spinner" style="display:none">
+        <span>Loading...</span>
+      </div>
 
     <!-- search section -->
     <div class="input-group mb-3 w-50 mx-auto mt-2">
         <input type="text" id="search-field" class="form-control" placeholder="search your favorite phone..." aria-label="Recipient's username" aria-describedby="button-addon2">
         <button class="btn btn-outline-secondary" type="button" id="search-btn" onclick="searchPhone()">Search</button>
     </div>
-
+ <!-- display phone not found msg -->
+ <h2 id="phone-not-found-msg" style="text-align: center; color: rgb(224, 11, 11); display: none;">Opps your expected phone not found, please search iphone</h2>
     <!-- display phone -->
 
     <div id="show-phone-div" class="container mx-auto">
 
     </div>
 
-    <!-- display phone not found msg -->
-    <h2 id="phone-not-found-msg" style="text-align: center; color: rgb(224, 11, 11); display: none;">Opps your expected phone not found, please search iphone</h2>
+   
+
+   
+      <!-- Modal -->
+   
+        <div  class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" id="phoneDetailContainer">
+              
+            </div>
+          </div>
+
+      
+          <!-- show all button -->
+          <div class="container text-center">
+            <button id="show-more-btn">Show More...</button>
+          </div>
+
+      
+    
+
 
     <!-- add script file -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
